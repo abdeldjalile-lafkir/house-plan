@@ -1,5 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Foundation, GroundFloor, FirstFloor } from "@/components/plans";
+import {
+  Foundation,
+  GroundFloor,
+  FirstFloor,
+  Draining,
+} from "@/components/plans";
 
 export default function Home() {
   return (
@@ -15,10 +20,11 @@ export default function Home() {
         defaultValue="foundation"
         className="mx-auto flex flex-col items-center justify-center gap-y-10"
       >
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="w-full min-w-2xl flex items-center justify-around my-4">
           <TabsTrigger value="foundation">Foundations Plan</TabsTrigger>
           <TabsTrigger value="ground-floor">Ground Floor Plan</TabsTrigger>
           <TabsTrigger value="first-floor">First Floor Plan</TabsTrigger>
+          <TabsTrigger value="draining">Draining Plan</TabsTrigger>
         </TabsList>
         <TabsContent value="foundation">
           <Foundation />
@@ -28,6 +34,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="first-floor">
           <FirstFloor />
+        </TabsContent>
+        <TabsContent value="draining">
+          <Draining />
         </TabsContent>
       </Tabs>
     </div>

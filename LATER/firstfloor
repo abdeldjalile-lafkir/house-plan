@@ -1,0 +1,216 @@
+import React from "react"; import { Room, Door, Measurement, StairFlight } from
+"@/components/shared"; function FirstFloor() { return (
+<div className="flex gap-x-30">
+  <div
+    className="w-150 h-166 flex border-black border-2 relative bg-white shadow-2xl"
+  >
+    {/* Left Section - Main Rooms */}
+    <div
+      className="w-52.5 h-full flex flex-col border-black border-r-2 relative"
+    >
+      <div className="relative">
+        <Room
+          title="Top Room"
+          dimensions="3.5m × 6m = 21m²"
+          bgColor="bg-blue-50"
+          className="w-full h-90 border-b border-black"
+        />
+        <Door position="bottom-[5px]" orientation="right" />
+      </div>
+      <div className="relative">
+        <Room
+          title="Bottom Room"
+          dimensions="3.5m × 5m = 17.5m²"
+          bgColor="bg-green-50"
+          className="w-full h-75 border-t border-black"
+        />
+        <Door position="top-[5px]" orientation="right" />
+      </div>
+      <Measurement value="3.5m" position="-top-8 left-0 right-0" />
+      <Measurement
+        value="6m"
+        position="-left-12 top-0 bottom-75"
+        orientation="vertical"
+      />
+      <Measurement
+        value="4m + 1m"
+        position="-left-20 top-75 bottom-0"
+        orientation="vertical"
+      />
+    </div>
+
+    {/* Middle Section - Kitchen and Hall */}
+    <div className="w-52.5 h-full border-black border-r-2 relative">
+      <div className="relative">
+        <Room
+          title="Kitchen Room"
+          dimensions="3.5m × 5m = 17.5m²"
+          bgColor="bg-yellow-50"
+          className="w-full h-75 border-black relative before:content-[''] before:absolute before:bottom-0 before:right-0 before:w-[80%] before:h-0 before:border-b-2 before:border-black"
+        />
+      </div>
+      <div className="relative">
+        <Room
+          title="Hall Room"
+          dimensions="3.5m × 6m = 21m²"
+          bgColor="bg-purple-50"
+          className="w-full h-90 border-black relative before:content-[''] before:absolute before:top-0 before:right-0 before:w-[80%] before:h-0 before:border-t-2 before:border-black"
+        />
+        <Door position="top-[5px]" orientation="right" />
+      </div>
+      <Measurement value="3.5m" position="-top-8 left-0 right-0" />
+    </div>
+
+    {/* Right Section - Bathroom and Staircase */}
+    <div className="flex flex-col w-45 h-full relative">
+      {/* Bathroom Room */}
+      <div className="relative">
+        <Room
+          title="Bathroom Room"
+          dimensions="3m × 3.5m = 10.5m²"
+          bgColor="bg-blue-50"
+          className="w-full h-52.5 border-b-2 border-black"
+        />
+        <Measurement
+          value="3.5m"
+          position="-right-12 top-0 bottom-0"
+          orientation="vertical"
+        />
+      </div>
+      {/* Staircase and Corridor Area */}
+      <div className="w-full relative flex">
+        {/* Right Section - Corridor */}
+        <div className="w-15 h-full relative flex">
+          {/* Corridor Bottom */}
+          <div className="w-15 h-full relative bg-orange-100">
+            <span
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-90 text-xs font-semibold whitespace-nowrap"
+            >
+              Corridor - 1m × 6.5m
+            </span>
+          </div>
+        </div>
+        <div className="w-30 h-full relative border-0 flex flex-col">
+          <div
+            className="w-30 h-37.5 relative bg-purple-50 border-b-2 border-black"
+          >
+            <Room
+              title=""
+              dimensions=""
+              bgColor="bg-orange-100"
+              className="w-full h-full"
+            />
+            <Measurement
+              value="2.5m"
+              position="-right-12 top-0 bottom-0"
+              orientation="vertical"
+            />
+          </div>
+
+          {/* Staircase Area */}
+          <div
+            className="w-30 h-45 relative border-t-2 border-black bg-gray-200"
+          >
+            {/* Staircase */}
+            <div
+              className="absolute left-0 right-0 h-45 bg-gray-300 border-2 border-gray-600"
+            >
+              <div className="w-full h-full flex">
+                {/* First Flight */}
+                <div className="w-1/2 h-full border-r border-gray-600 relative">
+                  <StairFlight variant="light" />
+                </div>
+
+                {/* Second Flight */}
+                <div className="w-1/2 h-full relative">
+                  <StairFlight variant="dark" />
+                </div>
+              </div>
+
+              {/* Staircase Labels */}
+              <span
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs font-bold text-gray-700 bg-white px-2 py-1 rounded border border-gray-600"
+              >
+                STAIRS
+              </span>
+              <span
+                className="absolute bottom-1 left-1/2 transform -translate-x-1/2 text-[10px] text-gray-700 font-semibold whitespace-nowrap"
+              >
+                3m × 2m
+              </span>
+            </div>
+
+            <Measurement
+              value="4m"
+              position="-right-12 top-0 bottom-0"
+              orientation="vertical"
+            />
+          </div>
+
+          {/* Space before staircase */}
+          <div className="w-30 h-15">
+            <Room
+              title=""
+              dimensions=""
+              bgColor="bg-orange-100"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Balcony Room */}
+      <div className="relative">
+        <Room
+          title="Balcony Room"
+          dimensions="3m × 1m = 3m²"
+          bgColor="bg-blue-50"
+          className="w-full h-15"
+        />
+        <Measurement
+          value="1m"
+          position="-right-12 top-0 bottom-0"
+          orientation="vertical"
+        />
+      </div>
+
+      <Measurement value="3m" position="-top-8 left-0 right-0" />
+    </div>
+  </div>
+  {/* Description Section */}
+  <div className="w-full flex-1 bg-white rounded-lg p-6">
+    <p className="max-w-150 text-sm text-gray-700 leading-relaxed">
+      <strong className="text-lg block mb-3">
+        First Floor Layout Overview
+      </strong>
+      The first floor comprises a thoughtfully designed residential space
+      divided into three distinct sections, offering comfortable living areas
+      with a total area of approximately 83m².
+      <br />
+      <br />
+      The left section features two private rooms connected by interior doors: a
+      spacious 21m² top room (3.5m × 6m) and a generous 17.5m² bottom room (3.5m
+      × 5m), both providing ample space for bedrooms or multi-purpose living
+      areas.
+      <br />
+      <br />
+      The middle section houses the kitchen and hall, each measuring 17.5m²
+      (3.5m × 5m) and 21m² (3.5m × 6m) respectively. These rooms are connected
+      with an elegant architectural detail, creating a flowing living space
+      ideal for daily activities and family interaction.
+      <br />
+      <br />
+      The right wing is dedicated to functional spaces, featuring a
+      well-appointed 10.5m² bathroom (3m × 3.5m), a connecting corridor (1m ×
+      6.5m) for seamless circulation, and a compact 3m² balcony (3m × 1m)
+      offering outdoor access.
+      <br />
+      <br />
+      The centerpiece of this wing is an elegant dual-flight staircase (3m × 2m)
+      that provides vertical circulation between floors, efficiently designed to
+      maximize space while maintaining comfortable access to all levels of the
+      home.
+    </p>
+  </div>
+</div>
+); } export default FirstFloor;

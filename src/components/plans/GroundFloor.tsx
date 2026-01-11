@@ -8,7 +8,7 @@ function GroundFloor() {
         {/* Top Section - Main Room */}
         <div className="w-full h-52.5 border-black border-b-2 relative">
           <Room
-            title="Main Room"
+            title="Guests Room"
             dimensions="10m × 3.5m = 35m²"
             bgColor="bg-blue-50"
             className="w-full h-full"

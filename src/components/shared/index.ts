@@ -3,4 +3,6 @@ import Room from "@/components/shared/Room";
 import Door from "@/components/shared/Door";
 import StairFlight from "@/components/shared/Stair";
 
-export { Door, Measurement, Room, StairFlight };
+import * as DrainingPipe from "@/components/shared/DrainingPipe";
+
+export { Door, Measurement, Room, StairFlight, DrainingPipe };

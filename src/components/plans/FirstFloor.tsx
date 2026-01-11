@@ -9,7 +9,7 @@ function FirstFloor() {
         <div className="w-52.5 h-full flex flex-col border-black border-r-2 relative">
           <div className="relative">
             <Room
-              title="Top Room"
+              title="Living Room"
               dimensions="3.5m × 6m = 21m²"
               bgColor="bg-blue-50"
               className="w-full h-90 border-b border-black"
@@ -18,7 +18,7 @@ function FirstFloor() {
           </div>
           <div className="relative">
             <Room
-              title="Bottom Room"
+              title="Bed Room"
               dimensions="3.5m × 5m = 17.5m²"
               bgColor="bg-green-50"
               className="w-full h-75 border-t border-black"
@@ -38,40 +38,56 @@ function FirstFloor() {
           />
         </div>
 
-        {/* Middle Section - Kitchen and Hall */}
+        {/* Middle Section - Hall and Kitchen */}
         <div className="w-52.5 h-full border-black border-r-2 relative">
           <div className="relative">
             <Room
-              title="Kitchen Room"
-              dimensions="3.5m × 5m = 17.5m²"
+              title="Hall"
+              dimensions="3.5m × 7m = 24.5m²"
               bgColor="bg-yellow-50"
-              className="w-full h-75 border-black relative before:content-[''] before:absolute before:bottom-0 before:right-0 before:w-[80%] before:h-0 before:border-b-2 before:border-black"
+              className="w-full h-105 relative"
             />
+            <Door position="bottom-[5px]" orientation="right" />
           </div>
           <div className="relative">
             <Room
-              title="Hall Room"
-              dimensions="3.5m × 6m = 21m²"
+              title="Kitchen"
+              dimensions="3.5m × 4m = 14m²"
               bgColor="bg-purple-50"
-              className="w-full h-90 border-black relative before:content-[''] before:absolute before:top-0 before:right-0 before:w-[80%] before:h-0 before:border-t-2 before:border-black"
+              className="w-full h-60 relative"
             />
-            <Door position="top-[5px]" orientation="right" />
           </div>
           <Measurement value="3.5m" position="-top-8 left-0 right-0" />
         </div>
 
         {/* Right Section - Bathroom and Staircase */}
         <div className="flex flex-col w-45 h-full relative">
-          {/* Bathroom Room */}
+          {/* Bedroom Room */}
           <div className="relative">
             <Room
-              title="Bathroom Room"
+              title="Bed Room 2"
               dimensions="3m × 3.5m = 10.5m²"
               bgColor="bg-blue-50"
               className="w-full h-52.5 border-b-2 border-black"
             />
+            <Door position="" orientation="left" />
             <Measurement
               value="3.5m"
+              position="-right-12 top-0 bottom-0"
+              orientation="vertical"
+            />
+          </div>
+          {/* Bathroom Room */}
+          <div className="relative">
+            <Room
+              title="Bathroom Room"
+              dimensions="3m × 2.5m = 7.5m²"
+              bgColor="bg-green-50"
+              className="w-full h-37.5 border-b-2 border-black"
+            />
+            <Door position="" orientation="bottom" />
+            <Measurement
+              value="2.5m"
               position="-right-12 top-0 bottom-0"
               orientation="vertical"
             />
@@ -88,20 +104,6 @@ function FirstFloor() {
               </div>
             </div>
             <div className="w-30 h-full relative border-0 flex flex-col">
-              <div className="w-30 h-37.5 relative bg-purple-50 border-b-2 border-black">
-                <Room
-                  title=""
-                  dimensions=""
-                  bgColor="bg-orange-100"
-                  className="w-full h-full"
-                />
-                <Measurement
-                  value="2.5m"
-                  position="-right-12 top-0 bottom-0"
-                  orientation="vertical"
-                />
-              </div>
-
               {/* Staircase Area */}
               <div className="w-30 h-45 relative border-t-2 border-black bg-gray-200">
                 {/* Staircase */}
@@ -149,7 +151,7 @@ function FirstFloor() {
           {/* Balcony Room */}
           <div className="relative">
             <Room
-              title="Balcony Room"
+              title="Balcony"
               dimensions="3m × 1m = 3m²"
               bgColor="bg-blue-50"
               className="w-full h-15"
@@ -172,31 +174,32 @@ function FirstFloor() {
           </strong>
           The first floor comprises a thoughtfully designed residential space
           divided into three distinct sections, offering comfortable living
-          areas with a total area of approximately 83m².
+          areas with a total area of approximately 98m².
           <br />
           <br />
           The left section features two private rooms connected by interior
-          doors: a spacious 21m² top room (3.5m × 6m) and a generous 17.5m²
-          bottom room (3.5m × 5m), both providing ample space for bedrooms or
-          multi-purpose living areas.
+          doors: a spacious Living Room measuring 21m² (3.5m × 6m) and a
+          generous Bed Room of 17.5m² (3.5m × 4m + 1m). Both rooms provide ample
+          space for comfortable living with doors opening to the central hall.
           <br />
           <br />
-          The middle section houses the kitchen and hall, each measuring 17.5m²
-          (3.5m × 5m) and 21m² (3.5m × 6m) respectively. These rooms are
-          connected with an elegant architectural detail, creating a flowing
-          living space ideal for daily activities and family interaction.
+          The middle section is the heart of the home, housing a central Hall of
+          24.5m² (3.5m × 7m) that connects all areas, and a Kitchen measuring
+          14m² (3.5m × 4m). The hall serves as the main circulation space with
+          doors providing access to adjacent rooms.
           <br />
           <br />
-          The right wing is dedicated to functional spaces, featuring a
-          well-appointed 10.5m² bathroom (3m × 3.5m), a connecting corridor (1m
-          × 6.5m) for seamless circulation, and a compact 3m² balcony (3m × 1m)
-          offering outdoor access.
+          The right wing features three distinct areas: Bed Room 2 at 10.5m² (3m
+          × 3.5m), a Bathroom Room of 7.5m² (3m × 2.5m), and a small Balcony
+          Room of 3m² (3m × 1m). A corridor running 1m × 6.5m provides
+          circulation throughout this section.
           <br />
           <br />
-          The centerpiece of this wing is an elegant dual-flight staircase (3m ×
-          2m) that provides vertical circulation between floors, efficiently
-          designed to maximize space while maintaining comfortable access to all
-          levels of the home.
+          The centerpiece of the right wing is an elegant dual-flight staircase
+          measuring 3m × 3m (total 4m height including landing space), featuring
+          two flights with contrasting designs. This staircase provides
+          efficient vertical circulation between floors while maintaining
+          comfortable access to all levels of the home.
         </p>
       </div>
     </div>
