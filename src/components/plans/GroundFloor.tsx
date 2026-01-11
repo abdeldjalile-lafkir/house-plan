@@ -19,6 +19,11 @@ function GroundFloor() {
             position="-left-12 top-0 bottom-0"
             orientation="vertical"
           />
+          <Measurement
+            value="3.5m"
+            position="-right-12 top-0 bottom-0"
+            orientation="vertical"
+          />
         </div>
 
         {/* Bottom Section - Garages and Right Wing */}
@@ -46,7 +51,20 @@ function GroundFloor() {
           </Room>
 
           {/* Right Wing - Bathroom, Stairs, and Corridor */}
+
           <div className="w-45 h-full relative flex">
+            {/* Right Section - Corridor */}
+            <div className="w-15 h-full relative flex">
+              {/* Corridor Bottom */}
+              <div className="w-15 h-full relative bg-orange-100">
+                <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-90 text-xs font-semibold whitespace-nowrap">
+                  Corridor - 1m × 6.5m
+                </span>
+                <Door position="" orientation="bottom" />
+                <Door position="" orientation="top" />
+              </div>
+            </div>
+
             {/* Left Section - Bathroom and Stairs  */}
             <div className="w-30 h-full relative border-0 flex flex-col">
               {/* Bathroom */}
@@ -55,9 +73,14 @@ function GroundFloor() {
                   title="Bathroom"
                   dimensions="2m × 2.5m"
                   bgColor="bg-transparent"
-                  className="w-full h-full"
+                  className="w-full h-full border-l-2 border-black"
                 />
-                <Door position="" orientation="right" />
+                <Door position="" orientation="left" />
+                <Measurement
+                  value="2.5m"
+                  position="-right-12 top-0 bottom-0"
+                  orientation="vertical"
+                />
               </div>
 
               {/* Staircase Area */}
@@ -84,28 +107,21 @@ function GroundFloor() {
                     3m × 2m
                   </span>
                 </div>
+                <Measurement
+                  value="4m"
+                  position="-right-12 top-0 bottom-0"
+                  orientation="vertical"
+                />
               </div>
 
               {/* Space before staircase */}
               <div className="w-30 h-15">
-                <Door position="" orientation="right" />
-              </div>
-
-              <Measurement
-                value="2.5m"
-                position="-right-12 top-0 bottom-0"
-                orientation="vertical"
-              />
-            </div>
-
-            {/* Right Section - Corridor */}
-            <div className="w-15 h-full relative flex">
-              {/* Corridor Bottom */}
-              <div className="w-15 h-full border-l-2 border-black relative bg-orange-100">
-                <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-90 text-xs font-semibold whitespace-nowrap">
-                  Corridor - 1m × 6.5m
-                </span>
-                <Door position="" orientation="bottom" />
+                <Room
+                  title=""
+                  dimensions=""
+                  bgColor="bg-orange-100"
+                  className="w-full h-full"
+                />
               </div>
             </div>
 
@@ -138,18 +154,18 @@ function GroundFloor() {
           <br />
           The right wing houses essential functional spaces including a
           well-appointed 5m² bathroom (2m × 2.5m) strategically positioned for
-          easy access. A thoughtfully designed corridor (1m wide) connects the
+          easy access. A thoughtfully designed corridor (1m × 6.5m) connects the
           various spaces, ensuring smooth circulation throughout the floor.
           <br />
           <br />
           The centerpiece of this wing is an elegant staircase (3m × 2m)
           featuring a dual-flight design that connects to the upper levels. The
-          staircase is designed with 11 steps per flight, providing comfortable
-          ascent while maximizing space efficiency.
+          staircase is designed to provide comfortable ascent while maximizing
+          space efficiency.
           <br />
           <br />
           This floor plan efficiently combines residential and utility spaces,
-          with a total area of approximately 90m², offering both functionality
+          with a total area of approximately 98m², offering both functionality
           and comfort for modern living.
         </p>
       </div>

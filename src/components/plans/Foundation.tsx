@@ -1,6 +1,5 @@
 import React from "react";
 
-// Sub-components for better organization
 const FoundationPillar = ({
   x,
   y,
@@ -10,12 +9,11 @@ const FoundationPillar = ({
   y: number;
   label: string;
 }) => {
-  // Convert 20cm to pixels (20cm = 0.2m, 1m = 60px, so 0.2m = 12px)
   const size = 12;
 
   return (
     <div
-      className="absolute bg-gray-600  border-gray-900 flex items-center justify-center shadow-md"
+      className="absolute bg-black border-2 border-black flex items-center justify-center shadow-md"
       style={{
         left: `${x}px`,
         top: `${y}px`,
@@ -23,7 +21,7 @@ const FoundationPillar = ({
         height: `${size}px`,
       }}
     >
-      <span className="text-[6px] text-white font-bold"></span>
+      <span className="text-[6px] text-black font-bold"></span>
     </div>
   );
 };
@@ -102,14 +100,14 @@ const GridLine = ({
   if (type === "horizontal") {
     return (
       <div
-        className="absolute left-0 right-0 h-px bg-gray-300"
+        className="absolute left-0 right-0 h-px bg-black"
         style={{ top: `${position}px` }}
       />
     );
   }
   return (
     <div
-      className="absolute top-0 bottom-0 w-px bg-gray-300"
+      className="absolute top-0 bottom-0 w-px bg-black"
       style={{ left: `${position}px` }}
     />
   );
