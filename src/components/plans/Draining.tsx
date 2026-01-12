@@ -3,7 +3,7 @@ import { DrainingPipe } from "@/components/shared";
 
 function Draining() {
   return (
-    <div className="flex items-start justify-between gap-x-10">
+    <div className="flex flex-col md:flex-row items-start justify-between gap-x-10">
       <GroundFloor />
       <FirstFloor />
     </div>
