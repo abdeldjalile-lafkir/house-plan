@@ -14,7 +14,7 @@ export default Draining;
 
 function GroundFloor() {
   return (
-    <div className="flex gap-x-30">
+    <div className="flex gap-30">
       <div className="w-150 h-151 border-black border-2 relative bg-white shadow-2xl">
         {/* Top Section */}
         <div className="w-full h-52.5 border-black border-b-2 relative bg-gray-50"></div>
