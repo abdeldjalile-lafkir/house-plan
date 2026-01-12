@@ -3,7 +3,7 @@ import { Room, Door, Measurement, StairFlight } from "@/components/shared";
 
 function FirstFloor() {
   return (
-    <div className="flex gap-x-30">
+        <div className="flex flex-col md:flex-row items-start gap-x-30">
       <div className="w-150 h-166 flex border-black border-2 relative bg-white shadow-2xl">
         {/* Left Section - Main Rooms */}
         <div className="w-52.5 h-full flex flex-col border-black border-r-2 relative">
