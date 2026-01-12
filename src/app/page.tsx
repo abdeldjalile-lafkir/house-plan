@@ -18,7 +18,7 @@ export default function Home() {
 
       <Tabs
         defaultValue="foundation"
-        className="mx-auto flex flex-col items-center justify-center gap-y-10"
+        className="mx-auto flex flex-col items-center justify-center gap-y-10 overflow-auto"
       >
         <TabsList className="w-full min-w-2xl flex items-center justify-around my-4">
           <TabsTrigger value="foundation">Foundations Plan</TabsTrigger>
