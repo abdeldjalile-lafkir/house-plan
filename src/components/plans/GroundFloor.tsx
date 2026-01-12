@@ -3,7 +3,7 @@ import { Room, Door, Measurement, StairFlight } from "@/components/shared";
 
 function GroundFloor() {
   return (
-        <div className="flex flex-col md:flex-row items-start gap-x-30">
+        <div className="flex flex-col md:flex-row items-start gap-30">
       <div className="w-150 h-151 border-black border-2 relative bg-white shadow-2xl">
         {/* Top Section - Main Room */}
         <div className="w-full h-52.5 border-black border-b-2 relative">
