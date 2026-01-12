@@ -147,7 +147,7 @@ function Foundation() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row items-start gap-x-30">
+    <div className="flex flex-col md:flex-row items-start gap-30">
       <div className="border-2 border-black">
         <div
           className="relative bg-gray-50 border-0 shadow-2xl"
