@@ -8,7 +8,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between p-24 m-25">
+    <div className="flex flex-col items-center justify-between p-24 m-25 overflow-x-scroll">
       <div className="w-full flex flex-col items-center justify-center mb-8">
         <h1 className="text-3xl font-bold mb-2">House Plan</h1>
         <p className="text-gray-600">
@@ -41,7 +41,7 @@ export default function Home() {
       </Tabs>
 
       <div className="w-full flex flex-col items-center justify-center my-18">
-        <h1 className="text-3xl font-bold mb-2">
+        <h1 className="text-xl font-bold mx-auto my-2">
           This project still under development
         </h1>
         <p className="text-gray-600">ABDELDJALILE LAFKIR | 213 676 04 17 42</p>
