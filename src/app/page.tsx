@@ -4,12 +4,13 @@ import {
   GroundFloor,
   FirstFloor,
   Draining,
+  Electricity,
 } from "@/components/plans";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between p-24 m-25 overflow-x-scroll">
-      <div className="w-full flex flex-col items-center justify-center mb-8">
+    <div className="flex flex-col items-center justify-between gap-10 p-24">
+      <div className="w-full flex flex-col items-center justify-center my-8">
         <h1 className="text-3xl font-bold mb-2">House Plan</h1>
         <p className="text-gray-600">
           Scale: 1:100 | Total Area: 10m × 10m = 100m²
@@ -18,13 +19,14 @@ export default function Home() {
 
       <Tabs
         defaultValue="foundation"
-        className="mx-auto flex flex-col items-center justify-center gap-y-10 overflow-auto"
+        className="mx-auto flex flex-col items-center justify-center gap-y-10"
       >
         <TabsList className="w-full min-w-2xl flex items-center justify-around my-4">
           <TabsTrigger value="foundation">Foundations Plan</TabsTrigger>
           <TabsTrigger value="ground-floor">Ground Floor Plan</TabsTrigger>
           <TabsTrigger value="first-floor">First Floor Plan</TabsTrigger>
           <TabsTrigger value="draining">Draining Plan</TabsTrigger>
+          <TabsTrigger value="electricity">Electricity Plan</TabsTrigger>
         </TabsList>
         <TabsContent value="foundation">
           <Foundation />
@@ -38,10 +40,13 @@ export default function Home() {
         <TabsContent value="draining">
           <Draining />
         </TabsContent>
+        <TabsContent value="electricity">
+          <Electricity />
+        </TabsContent>
       </Tabs>
 
       <div className="w-full flex flex-col items-center justify-center my-18">
-        <h1 className="text-xl font-bold mx-auto my-2">
+        <h1 className="text-xl font-bold mx-auto my-10">
           This project still under development
         </h1>
         <p className="text-gray-600">ABDELDJALILE LAFKIR | 213 676 04 17 42</p>

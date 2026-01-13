@@ -1,137 +1,19 @@
 import React from "react";
-
-const FoundationPillar = ({
-  x,
-  y,
-  label,
-}: {
-  x: number;
-  y: number;
-  label: string;
-}) => {
-  const size = 12;
-
-  return (
-    <div
-      className="absolute bg-black border-2 border-black flex items-center justify-center shadow-md"
-      style={{
-        left: `${x}px`,
-        top: `${y}px`,
-        width: `${size}px`,
-        height: `${size}px`,
-      }}
-    >
-      <span className="text-[6px] text-black font-bold"></span>
-    </div>
-  );
-};
-
-const Measurement = ({
-  value,
-  position,
-  orientation = "horizontal",
-  style,
-}: {
-  value: string;
-  position: string;
-  orientation?: "horizontal" | "vertical";
-  style?: React.CSSProperties;
-}) => (
-  <div
-    className={`absolute ${position} flex items-center justify-center gap-2 ${
-      orientation === "vertical" ? "flex-col" : "flex-row"
-    }`}
-    style={style}
-  >
-    {/* Left/Top Arrow */}
-    <div
-      className={`flex items-center ${
-        orientation === "vertical" ? "flex-col" : "flex-row"
-      }`}
-    >
-      <div
-        className={`${
-          orientation === "vertical"
-            ? "w-0 h-0 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-gray-600"
-            : "w-0 h-0 border-t-4 border-b-4 border-r-8 border-t-transparent border-b-transparent border-r-gray-600"
-        }`}
-      />
-      <div
-        className={`bg-gray-600 ${
-          orientation === "vertical" ? "w-0.5 h-4" : "h-0.5 w-4"
-        }`}
-      />
-    </div>
-
-    {/* Measurement Text */}
-    <div className="px-2 py-2 text-xs font-semibold whitespace-nowrap">
-      {value}
-    </div>
-
-    {/* Right/Bottom Arrow */}
-    <div
-      className={`flex items-center ${
-        orientation === "vertical" ? "flex-col" : "flex-row"
-      }`}
-    >
-      <div
-        className={`bg-gray-600 ${
-          orientation === "vertical" ? "w-0.5 h-4" : "h-0.5 w-4"
-        }`}
-      />
-      <div
-        className={`${
-          orientation === "vertical"
-            ? "w-0 h-0 border-l-4 border-r-4 border-t-8 border-l-transparent border-r-transparent border-t-gray-600"
-            : "w-0 h-0 border-t-4 border-b-4 border-l-8 border-t-transparent border-b-transparent border-l-gray-600"
-        }`}
-      />
-    </div>
-  </div>
-);
-
-const GridLine = ({
-  type,
-  position,
-}: {
-  type: "horizontal" | "vertical";
-  position: number;
-}) => {
-  if (type === "horizontal") {
-    return (
-      <div
-        className="absolute left-0 right-0 h-px bg-black"
-        style={{ top: `${position}px` }}
-      />
-    );
-  }
-  return (
-    <div
-      className="absolute top-0 bottom-0 w-px bg-black"
-      style={{ left: `${position}px` }}
-    />
-  );
-};
+import { FoundationPillar, GridLine, Measurement } from "@/components/shared";
 
 function Foundation() {
-  // Scale: 1m = 60px
-  const scale = 60; // pixels per meter
+  const scale = 60;
 
-  // Horizontal positions in meters: 0, 3.5, 7, 9.8 (last at 9.8m so pillar ends at 10m)
   const horizontalPositions = [0, 3.5, 7, 9.8];
 
-  // Vertical positions in meters: 0, 3.5, 6, 9.8 (last at 9.8m so pillar ends at 10m)
   const verticalPositions = [0, 3.5, 6, 9.8];
 
-  // Convert to pixels
   const horizontalPx = horizontalPositions.map((m) => m * scale);
   const verticalPx = verticalPositions.map((m) => m * scale);
 
-  // Building dimensions
-  const buildingWidth = 10 * scale; // 10m = 600px
-  const buildingHeight = 10 * scale; // 10m = 600px
+  const buildingWidth = 10 * scale;
+  const buildingHeight = 10 * scale;
 
-  // Generate foundation pillars
   const foundations: Array<{ x: number; y: number; label: string }> = [];
   let count = 1;
 
@@ -147,7 +29,7 @@ function Foundation() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row items-start gap-30">
+    <div className="inline-flex flex-col md:flex-row items-start gap-30">
       <div className="border-2 border-black">
         <div
           className="relative bg-gray-50 border-0 shadow-2xl"
@@ -177,64 +59,25 @@ function Foundation() {
           ))}
 
           {/* Measurements - Top (Horizontal) */}
-          <Measurement
-            value="3.5m"
-            position="-top-8"
-            style={{
-              left: `${
-                horizontalPx[0] + (horizontalPx[1] - horizontalPx[0]) / 2
-              }px`,
-              transform: "translateX(-50%)",
-            }}
-          />
-          <Measurement
-            value="3.5m"
-            position="-top-8"
-            style={{
-              left: `${
-                horizontalPx[1] + (horizontalPx[2] - horizontalPx[1]) / 2
-              }px`,
-              transform: "translateX(-50%)",
-            }}
-          />
-          <Measurement
-            value="3.0m"
-            position="-top-8"
-            style={{
-              left: `${
-                horizontalPx[2] + (horizontalPx[3] - horizontalPx[2]) / 2
-              }px`,
-              transform: "translateX(-50%)",
-            }}
-          />
+          <Measurement value="3.5m" position="-top-8 left-15" />
+          <Measurement value="3.5m" position="-top-8 left-65" />
+          <Measurement value="3.0m" position="-top-8 left-115" />
 
           {/* Measurements - Left (Vertical) */}
           <Measurement
             value="3.5m"
-            position="-left-14"
+            position="-left-14 top-15"
             orientation="vertical"
-            style={{
-              top: `${verticalPx[0] + (verticalPx[1] - verticalPx[0]) / 2}px`,
-              transform: "translateY(-50%)",
-            }}
           />
           <Measurement
             value="2.5m"
-            position="-left-14"
+            position="-left-14 top-65"
             orientation="vertical"
-            style={{
-              top: `${verticalPx[1] + (verticalPx[2] - verticalPx[1]) / 2}px`,
-              transform: "translateY(-50%)",
-            }}
           />
           <Measurement
             value="4.0m"
-            position="-left-14"
+            position="-left-14 top-115"
             orientation="vertical"
-            style={{
-              top: `${verticalPx[2] + (verticalPx[3] - verticalPx[2]) / 2}px`,
-              transform: "translateY(-50%)",
-            }}
           />
         </div>
       </div>
